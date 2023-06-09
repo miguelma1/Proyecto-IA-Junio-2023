@@ -16,12 +16,6 @@ titanicData = pd.read_csv('./datos/titanic.csv', skiprows = 1, header = None,
                               names=['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare', 'Embarked', 'Initial', 'Age_band', 'Family_Size', 'Alone', 'Fare_cat', 'Deck', 'Title', 'Is_Married', 'Survived'])
 
 
-print(pcosData.shape)
-print(pcosData.head(5))
-
-print(titanicData.shape)
-print(titanicData.head(5))
-
 from sklearn.preprocessing import StandardScaler
 
 #variables booleanas o respuesta
