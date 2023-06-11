@@ -12,7 +12,7 @@ def bootstrapData (fileName, data, amountNewFiles):
                     #frac = 1 bootstrappea todo el dataSet, si quisiese el 50% haria frac = 0.5
                     #replace = true puede repetir filas
 
-        bootstrap_sample = data.sample(frac = 1, replace = True)
+        bootstrap_sample = data.sample(frac = 0.5, replace = True)
         route = f'./datos/conjutosEntrenamiento/{fileName}_trainSet_{i+1}.csv'
         bootstrap_sample.to_csv(route, index = False)
 
