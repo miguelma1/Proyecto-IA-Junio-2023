@@ -44,21 +44,22 @@ def entrenamientoDeModelos(data, numModelos, algoritmo, proporcionColumnas, file
                     alg = SGDClassifier()
     #separo las variables de datos de las objetivos y ajusto entreno el algoritmo
                 x, y = separarVariables(i)
-
-                #num_columns = int(proporcionColumnas * x.shape[1])
-                #selected_columns = np.random.choice(x.columns, size=num_columns, replace=False)
+                print("el shape original es: ", x.shape)
+                num_columns = int(proporcionColumnas * x.shape[1])
+                selected_columns = np.random.choice(x.columns, size=num_columns, replace=False)
                
-                #x = x[selected_columns]
-             
+                selectedX = x[selected_columns]
+                print("el shape SELECTED es: ", selectedX.shape, selectedX)
 
-                alg.fit(x, y)
+
+                alg.fit(selectedX, y)
 #meto en una lista el modelo entrenado y las columnas empleadas en su entrenamiento
                 res.append((alg,x.columns))
     return res
 
 #entrenamientoDeModelos(titanicData, 2, 'tree',1, "titanicPrueba")
 print("aqui")
-print(entrenamientoDeModelos(titanicData, 1, 'tree',0.66, "titanicPrueba"))
+print(entrenamientoDeModelos(titanicData, 1, 'tree',0.67, "titanicPrueba"))
 
 #d = entrenamientoDeModelos(titanicData, 2, 'tree',1, "titanicPrueba")
 

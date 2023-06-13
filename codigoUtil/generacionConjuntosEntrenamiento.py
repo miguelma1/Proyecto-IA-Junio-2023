@@ -33,7 +33,7 @@ def generadorConjutosEntrenamiento(fileName, data, amountFiles):
 
             res.append(subspace_sample)
 
-            route = f'./datos/conjutosEntrenamiento/{fileName}_trainSet_{i+1}.{j+1}.csv'
+            route = f'./datos/conjuntosEntrenamiento/{fileName}_trainSet_{i+1}.{j+1}.csv'
             subspace_sample.to_csv(route, index = False)
             
     print(res)
